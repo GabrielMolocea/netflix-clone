@@ -4,9 +4,9 @@ import { FooterContainer } from '../containers/footer';
 
 export default function Signin() {
   return (
-    <React.Fragment>
+    <>
       <HeaderContainer>Hello form Sign in</HeaderContainer>
       <FooterContainer />
-    </React.Fragment>
+    </>
   );
 }
