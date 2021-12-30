@@ -8,7 +8,7 @@ import { HeaderContainer } from '../containers/heder';
 
 export default function Home() {
   return (
-    <React.Fragment>
+    <>
       <HeaderContainer>
         <Feature>
           <Feature.Title>
@@ -31,6 +31,6 @@ export default function Home() {
       <JumbotronContainer />
       <FaqsContainer />
       <FooterContainer />
-    </React.Fragment>
+    </>
   );
 }
