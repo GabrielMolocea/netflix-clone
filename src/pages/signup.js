@@ -1,14 +1,13 @@
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { FirebaseContext } from '../context/firebase';
+import { Form } from '../components';
 import { HeaderContainer } from '../containers/heder';
 import { FooterContainer } from '../containers/footer';
-import { Form } from '../components';
 import * as ROUTES from '../constants/routes';
-import { fireEvent } from '@testing-library/react';
 
-export default function Signup() {
-  const history = useNavigate();
+export default function SignUp() {
+  const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
 
   const [firstName, setFirstName] = useState('');
@@ -21,7 +20,7 @@ export default function Signup() {
   const handleSignup = (event) => {
     event.preventDefault();
 
-    return fireEvent
+    return firebase
       .auth()
       .createUserWithEmailAndPassword(emailAddress, password)
       .then((result) =>
