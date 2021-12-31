@@ -10,8 +10,8 @@ export default function Signin() {
   const history = useNavigate();
   const { firebase } = useContext(FirebaseContext);
 
-  const [emailAddress, setEmailAdress] = useState('');
-  const [password, setPassowrd] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const isInvalid = password === '' || emailAddress === '';
@@ -26,8 +26,8 @@ export default function Signin() {
         history.push(ROUTES.BROWSE);
       })
       .cath((error) => {
-        setEmailAdress('');
-        setPassowrd('');
+        setEmailAddress('');
+        setPassword('');
         setError(error.message);
       });
   };
@@ -42,14 +42,14 @@ export default function Signin() {
             <Form.Input
               placeholder="Email address"
               value={emailAddress}
-              onChange={({ target }) => setEmailAdress(target.value)}
+              onChange={({ target }) => setEmailAddress(target.value)}
             />
             <Form.Input
               type="password"
               value={password}
               autoComplete="off"
               placeholder="Password"
-              onChange={({ target }) => setPassowrd(target.value)}
+              onChange={({ target }) => setPassword(target.value)}
             />
             <Form.Submit
               disabled={isInvalid}
