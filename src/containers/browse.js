@@ -10,6 +10,7 @@ export function BrowseContainer() {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  const [slideRows, setSlideRows] = useState([]);
 
   const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
